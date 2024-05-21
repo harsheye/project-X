@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
+
+
+       
+
+
+       .search{
+       position: relative;
+       box-shadow: 0 0 40px rgba(51, 51, 51, .1);
+       right:250px;
+       z-index: 12;
+       }
+
+       .search input {
+        height: 60px;
+        width: 350px;
+        border: 2px solid #d6d4d4;
+    }
+    
+    .search input:focus {
+        box-shadow: none;
+        border: 2px solid blue;
+    }
+    
+    .search .fa-search {
+        position: absolute;
+        top: 20px;
+        left: 16px;
+    }
+    
+    .search button {
+        position: absolute;
+        top: 5px;
+        right: -150px;
+        height: 50px;
+        width: 110px;
+        background: rgba(54, 249, 5, 0.832);
+    }
+    
+
+    .tau{
+        position: relative;
+        z-index: 400;
+    }
+
+    
+/* CSS */
+#button-53,
+#button-54,
+#button-55 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    background-color: aliceblue;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+#button-53:active,
+#button-54:active,
+#button-55:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+@media (min-width: 768px) {
+    #button-53,
+    #button-54,
+    #button-55 {
+        padding: 0.25em 0.75em;
+    }
+}

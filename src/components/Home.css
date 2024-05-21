@@ -1,0 +1,167 @@
+.great {
+  padding: 30px 0 0 200px;
+  
+}
+
+.card-min {
+  min-width: 400px;
+}
+.btn-desi-nigga {
+  /* flex: 1 1 calc(33.333% - 12px); Three buttons per row with a gap */
+    max-width: 95px; /* Ensure the buttons do not grow too large */
+    height: 95px;
+    border-radius: 100rem !important;
+    background-color: black;
+    color: white;
+    text-align: center;
+    line-height: 95px; /* Vertically center the text */
+}
+
+.transcations{
+  height:100px;
+  border: 2px solid;
+}
+
+.chutad-yadav {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping */
+  gap: 12px; /* Space between buttons */
+  justify-content: flex-start;
+  position: relative;
+}
+
+.card-bor{
+  position: relative;
+  min-width: none;
+}
+
+
+.image--cover {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center right;
+  margin-top: -3px;
+  margin-left: 5px;
+}
+
+/* Ensure the parent wrapper has relative positioning */
+.wrappermaster {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* border: 5px solid; */
+  position: relative;
+}
+
+/* Individual master101 divs default styles */
+.master101 {
+  width: 55%;
+  height: 20%;
+}
+
+/* Second master101 div default styles */
+.master101:nth-child(2) {
+  width: 35%;
+  margin-right: 70px;
+  height: 70% !important;
+  min-width: 400px;
+  position: relative;
+}
+
+
+
+
+.card-min {
+  min-width: 250px; /* Initial width */
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.card-bor {
+  width: 100%; /* Ensure the card takes up the full width */
+  margin-left: 0;
+  position: relative;
+}
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .card-min {
+    max-width: 300px !important; /* Remove the fixed minimum width on smaller screens */
+    width: 65% !important; /* Set width to 100% to make it responsive */
+    margin-bottom: 20px; /* Adjust margin for better spacing */
+    overflow: hidden;
+    flex: 1 1 calc(33.333% - 20px);
+  }
+  
+  .great{
+    padding: 0 0 0 100px !important;
+  }
+  .wrappermaster {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 400px;
+  }
+
+  .master101 {
+      width: 100% !important;
+      margin-right: 0 !important;
+      margin-bottom: 20px;
+      min-width: auto;
+  }
+
+  .samba {
+    width: 48% !important;
+  }
+
+  .row1{
+    display: flex !important;
+    flex-direction: column !important;
+    padding-left: 6vw;
+    flex-wrap: wrap;
+    gap: 20px; /* Optional: space between child elements */
+  }
+  .heading{
+    display: flex;
+    flex-direction: column !important;
+  }
+  .heading:nth-child(1){
+    margin-top: 9vh;
+  }
+
+  .name{
+    margin-top: -17vh;
+    padding-bottom: 10vh;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+
+  }
+  .card-trans{
+    max-width: 370px;
+    
+  }
+  .master101:nth-child(2){
+    padding-right: 6vw;
+    margin-left: -4.4vw;
+  }
+
+  .card-bor {
+    min-width: 370px !important;
+    /* width: 100%; Full width on smaller screens */
+    margin-left: 0;
+}
+.chutad-yadav {
+    justify-content: center; /* Center buttons on smaller screens */
+    margin-left: -12vw;
+}
+.btn-desi-nigga {
+    flex: 1 1 45%; /* Two buttons per row with a gap */
+    max-width: 95px !important; /* Ensure buttons take the available space */
+    width: 75px !important;
+    height: 75px; /* Reduce height on smaller screens */
+    line-height: 75px; /* Vertically center the text */
+}
+}
+

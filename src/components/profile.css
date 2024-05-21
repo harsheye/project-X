@@ -1,0 +1,14 @@
+.labels {
+    font-size: 20px;
+    margin-left: 10px;
+
+}
+
+.rounded-circle{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center right;
+  margin-left: 80px;
+}

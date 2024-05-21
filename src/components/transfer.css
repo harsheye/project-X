@@ -1,0 +1,30 @@
+.wrapper101{
+    background: rgba(255, 255, 255, 0.192);
+    backdrop-filter: blur(10px);
+    height: 250px;
+    width: 600px;
+    padding: 20px 0 0 40px !important;
+    border-radius: 15px;
+    border: 3px solid rgba(43, 43, 43, 0.568) !important;
+    position:relative;
+    z-index: 10;
+    /* //shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset; */
+}
+
+.form-control{
+    margin-top:10px;
+}
+
+.btn{
+    margin-top:10px;
+    margin-left:55px
+}
+.btn-behan{
+    background-color: #0b5ed7;
+    color:aliceblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 30%;
+
+}
