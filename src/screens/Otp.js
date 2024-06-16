@@ -4,6 +4,8 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import generateOTP from '../components/Generateotp';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
+import formData from 'form-data'; 
+import Mailgun from 'mailgun.js';
 
 export default function Otp() {
   const [otp, setOtp] = useState('');
@@ -12,10 +14,7 @@ export default function Otp() {
   const decodedToken = jwtDecode(authToken);
   const userId = decodedToken.user.id;
 
-  useEffect(() => {
-    const generatedOTP = generateOTP();
-    setOtp(generatedOTP);
-  }, []);
+  
 
   const isAllInputFilled = () => {
     const inputs = document.querySelectorAll(".otp-input");
@@ -59,6 +58,57 @@ export default function Otp() {
       });
     }
   };
+
+  useEffect(() => {
+
+    const generatedOTP = generateOTP();
+    setOtp(generatedOTP);
+
+    const fetchEmailAndSendOTP = async () => {
+      try {
+        const response = await fetch(`http://localhost:9015/api/dataget/${window.ID}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-auth-token': authToken
+          }
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          const userEmail = data.email; // Assuming your API returns the email in this format
+
+          const generatedOTP = generateOTP();
+          setOtp(generatedOTP);
+
+          // Mailgun Configuration
+          const mailgun = new Mailgun(formData);
+          const mg = mailgun.client({
+            username: 'api', 
+            key: 'b6f62306692dd7d21ca0d40f60bc0034-a2dd40a3-adfe4eb5' 
+          });
+
+          mg.messages.create('sandbox-123.mailgun.org', {
+            from: "Excited User <mailgun@sandbox-123.mailgun.org>",
+            to: "harshbelarkha@proton.me", 
+            subject: "Your OTP",
+            text: `Your OTP for verification is: ${generatedOTP}`
+          })
+          .then(msg => console.log(msg)) 
+          .catch(err => console.error('Error sending email:', err));
+        } else {
+          console.error('Failed to fetch email address');
+          // Handle error accordingly
+        }
+      } catch (error) {
+        console.error('Error fetching email and sending OTP:', error);
+        // Handle error gracefully
+      }
+    };
+
+    fetchEmailAndSendOTP();
+  }, []); // Empty dependency array ensures this effect runs only once on mount
+
 
   const verifyOTP = async () => {
     if (isAllInputFilled()) {

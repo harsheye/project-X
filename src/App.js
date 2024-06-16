@@ -32,7 +32,10 @@ function App() {
           {/* Add your other routes here */}
           <Route exact path="/Notifications" element={<Notifications/>}/>
           <Route exact path="/signup" element={<signup/>}/>
-
+          <Route 
+            path="/Otp"
+            element={isLoggedIn() ? <Otp /> : <Navigate to="/" replace />} 
+          />
           <Route 
             path="/Profile"
             element={isLoggedIn() ? <Profile /> : <Navigate to="/" replace />} 

@@ -49,11 +49,12 @@ export default function Transfer() {
 
         try {
             const amount = parseFloat(formData.amount);
+            const authToken = sessionStorage.getItem(authToken);
             const response = await fetch('http://localhost:9015/api/transaction', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'x-auth-token': sessionStorage.getItem(authToken)
+                    'x-auth-token': authToken
                 },
                 body: JSON.stringify({
                     from: formData.from,

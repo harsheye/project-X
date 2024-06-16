@@ -20,7 +20,10 @@ const corsOptions = {
         'http://100.127.101.111:80',
         'http://js.stripe.com',
         'https://js.stripe.com',
-        'https://js.stripe.com'
+        'https://js.stripe.com',
+        'http://localhost:27097',
+        'http://localhost:3000',
+        'http://localhost'
     ],
     credentials: true, // Enable credentials if true
     insecureContext: true
